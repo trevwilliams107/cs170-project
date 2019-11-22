@@ -95,7 +95,7 @@ def generate_random_graph(n, max_weight):
     #return nx.number_of_edges(G)
 
 
-n = 49
+n = 199
 a = generate_random_graph(n, 50)
 asar = np.asarray(a)
 b = [[0 for x in range(n + 1)] for y in range(n + 1)]

@@ -44,7 +44,7 @@ def generate_random_graph(n, max_weight):
         #if (sp_v_to_u < w or sp_u_to_v < w):
         #    G.remove_edge(u, v)
         #    count -= 1
-        #    #i -= 1
+            #i -= 1
         else:
             i += 1
 

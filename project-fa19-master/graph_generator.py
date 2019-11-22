@@ -30,23 +30,39 @@ def generate_random_graph(n, max_weight):
         else:
             #i -= 1
             continue
+        i += 1
 
-        shortest = dict(nx.floyd_warshall(G))
-        vtou = shortest[u][v]
-        if abs(shortest[u][v] - w) >= 0.00001:
-            G.remove_edge(u, v)
-            count -= 1
+    delete = {}
+    shortest = dict(nx.floyd_warshall(G))
+    for u1, v1, datadict in G.edges(data=True):
+        if abs(shortest[u1][v1] - datadict['weight']) >= 0.00001:
+            if (not (u1 in delete.keys())):
+                delete.setdefault(u1, [])
+            delete[u1].append(v1)
+    for key in delete:
+        for val in delete[key]:
+            G.remove_edge(key, val)
 
 
 
-        #sp_v_to_u = nx.single_source_dijkstra_path_length(G, v, cutoff=None, weight='weight')[u]
-        #sp_u_to_v = nx.single_source_dijkstra_path_length(G, u, cutoff=None, weight='weight')[v]
-        #if (sp_v_to_u < w or sp_u_to_v < w):
-        #    G.remove_edge(u, v)
-        #    count -= 1
-            #i -= 1
-        else:
-            i += 1
+        # shortest = dict(nx.floyd_warshall(G))
+        # vtou = shortest[u][v]
+        #
+        # if (w>vtou):
+        #     G.remove_edge(u, v)
+        #     count -= 1
+        #
+        #
+        #
+        #
+        # #sp_v_to_u = nx.single_source_dijkstra_path_length(G, v, cutoff=None, weight='weight')[u]
+        # #sp_u_to_v = nx.single_source_dijkstra_path_length(G, u, cutoff=None, weight='weight')[v]
+        # #if (sp_v_to_u < w or sp_u_to_v < w):
+        # #    G.remove_edge(u, v)
+        # #    count -= 1
+        #     #i -= 1
+        # else:
+        #     i += 1
 
         #f.write("hi" + str(i) + '\n')
     file = open("matrix.txt", "w")

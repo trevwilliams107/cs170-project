@@ -1,5 +1,6 @@
-Fizz Thresh Heimerdinger Huskar Sven Nasus Medusa Tiny Katarina Gragas Terrorblade KhaZix Slardar Kassadin Gragas Kennen CentaurWarrunner Sniper WinterWyvern Nidalee NightStalker Annie Singed Quinn Ekko Venomancer Karma Omniknight Terrorblade StormSpirit Amumu BountyHunter Huskar Warlock Weaver ShadowFiend DeathProphet Fiddlesticks Janna Undying Zeus Rengar Fizz Magnus Visage TrollWarlord Orianna Kled Jinx Syndra Leshrac Sona Azir LoneDruid Zed Rubick Morphling Irelia Techies Beastmaster FacelessVoid VelKoz LeBlanc Amumu Karma Pantheon ShadowDemon BountyHunter Puck SpiritBreaker Bane Yorick Vladimir Ryze Mirana Slark Orianna Gragas Trundle JarvanIV Timbersaw Jayce Ziggs Tristana Xayah Cassiopeia Chen Viktor Leona Oracle Brand Lucian Vi Bard Nunu Brewmaster ShadowShaman Talon Necrophos Rumble Zilean TahmKench Kayn Fizz
+Fizz Thresh Heimerdinger Huskar Sven Nasus Medusa Tiny Katarina KhaZix Terrorblade Kassadin Slardar Kennen Gragas CentaurWarrunner Sniper WinterWyvern Nidalee NightStalker Annie Singed Quinn Ekko Venomancer Karma Omniknight BountyHunter Weaver Warlock StormSpirit ShadowFiend DeathProphet Fiddlesticks Janna Undying Magnus Rengar Visage TrollWarlord Jinx Kled Syndra LoneDruid Sona Azir Zed Rubick Morphling Irelia Techies Beastmaster FacelessVoid VelKoz LeBlanc Amumu ShadowDemon Pantheon Puck SpiritBreaker Bane Yorick Vladimir Ryze Mirana Slark Orianna JarvanIV Trundle Jayce Timbersaw Ziggs Tristana Xayah Cassiopeia Chen Viktor Leona Oracle Vi Lucian ShadowShaman Nunu Brewmaster Talon TahmKench Zilean Rumble Kayn Fizz
 89
+Fizz Fizz
 Thresh Thresh
 Heimerdinger Heimerdinger
 Huskar Huskar
@@ -8,12 +9,12 @@ Nasus Nasus
 Medusa Medusa
 Tiny Tiny
 Katarina Katarina
-Terrorblade Terrorblade
 KhaZix KhaZix
-Slardar Slardar
+Terrorblade Terrorblade
 Kassadin Kassadin
-Gragas Gragas
+Slardar Slardar
 Kennen Kennen
+Gragas Gragas
 CentaurWarrunner CentaurWarrunner
 Sniper Sniper
 WinterWyvern WinterWyvern
@@ -26,26 +27,25 @@ Ekko Ekko
 Venomancer Venomancer
 Karma Karma
 Omniknight Omniknight
-StormSpirit StormSpirit
 BountyHunter BountyHunter
-Warlock Warlock
 Weaver Weaver
+Warlock Warlock
+StormSpirit StormSpirit
 ShadowFiend ShadowFiend
 DeathProphet DeathProphet
 Fiddlesticks Fiddlesticks
 Janna Janna
 Undying Undying
-Rengar Rengar
-Fizz Fizz
 Magnus Magnus
+Rengar Rengar
 Visage Visage
 TrollWarlord TrollWarlord
-Kled Kled
 Jinx Jinx
+Kled Kled
 Syndra Syndra
+LoneDruid LoneDruid
 Sona Sona
 Azir Azir
-LoneDruid LoneDruid
 Zed Zed
 Rubick Rubick
 Morphling Morphling
@@ -56,8 +56,8 @@ FacelessVoid FacelessVoid
 VelKoz VelKoz
 LeBlanc LeBlanc
 Amumu Amumu
-Pantheon Pantheon
 ShadowDemon ShadowDemon
+Pantheon Pantheon
 Puck Puck
 SpiritBreaker SpiritBreaker
 Bane Bane
@@ -67,10 +67,10 @@ Ryze Ryze
 Mirana Mirana
 Slark Slark
 Orianna Orianna
-Trundle Trundle
 JarvanIV JarvanIV
-Timbersaw Timbersaw
+Trundle Trundle
 Jayce Jayce
+Timbersaw Timbersaw
 Ziggs Ziggs
 Tristana Tristana
 Xayah Xayah
@@ -79,13 +79,13 @@ Chen Chen
 Viktor Viktor
 Leona Leona
 Oracle Oracle
-Lucian Lucian
 Vi Vi
+Lucian Lucian
+ShadowShaman ShadowShaman
 Nunu Nunu
 Brewmaster Brewmaster
-ShadowShaman ShadowShaman
 Talon Talon
-Rumble Rumble
-Zilean Zilean
 TahmKench TahmKench
+Zilean Zilean
+Rumble Rumble
 Kayn Kayn

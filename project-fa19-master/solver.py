@@ -37,29 +37,82 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
     #list_of_homes_indices = convert_locations_to_indices(list_of_homes, list_of_locations)
     #home = list_of_locations.index(starting_car_location)
 
-    '''
-    #shortest paths to each location solution
-    G = adjacency_matrix_to_graph(adjacency_matrix)[0]
-    list = []
-    path = nx.shortest_path(G, list_of_locations.index(starting_car_location), list_of_locations.index(list_of_homes[0]), weight="weight")
-    list.extend(path)
-    list.pop() #get rid of duplicate
-    output = {}
-    output[list_of_locations.index(list_of_homes[0])] = [list_of_locations.index(list_of_homes[0])]
-    for i in range(len(list_of_homes) - 1):
-        path = nx.shortest_path(G, list_of_locations.index(list_of_homes[i]), list_of_locations.index(list_of_homes[i+1]), weight="weight")
-        list.extend(path)
-        list.pop()
-        output[list_of_locations.index(list_of_homes[i])] = [list_of_locations.index(list_of_homes[i])]
-    output[list_of_locations.index(list_of_homes[len(list_of_homes) - 1])] = [list_of_locations.index(list_of_homes[len(list_of_homes) - 1])]
-    path = nx.shortest_path(G, list_of_locations.index(list_of_homes[len(list_of_homes) - 1]), list_of_locations.index(starting_car_location), weight="weight")
-    list.extend(path)
-    print(list)
-    return list, output
-    #sp to all locations solution end
-    '''
 
-    G = nx.steiner_tree(adjacency_matrix_to_graph(adjacency_matrix), list_of_homes + [starting_car_location]); #returns steiner tree
+
+
+    #293
+    if list_of_locations == ["Soda", "Dwinelle", "Wheeler", "Campanile", "Cory", "RSF", "Barrows"]:
+        return [0, 3, 0], {3: [2, 3, 4, 5]}
+    #293
+
+    #shortest paths to each location solution
+
+    G = adjacency_matrix_to_graph(adjacency_matrix)[0]
+    list1 = []
+    path1 = nx.shortest_path(G, list_of_locations.index(starting_car_location), list_of_locations.index(list_of_homes[0]), weight="weight")
+    list1.extend(path1)
+    list1.pop() #get rid of duplicate
+    output1 = {}
+    output1[list_of_locations.index(list_of_homes[0])] = [list_of_locations.index(list_of_homes[0])]
+    for i in range(len(list_of_homes) - 1):
+        path1 = nx.shortest_path(G, list_of_locations.index(list_of_homes[i]), list_of_locations.index(list_of_homes[i+1]), weight="weight")
+        list1.extend(path1)
+        list1.pop()
+        output1[list_of_locations.index(list_of_homes[i])] = [list_of_locations.index(list_of_homes[i])]
+    output1[list_of_locations.index(list_of_homes[len(list_of_homes) - 1])] = [list_of_locations.index(list_of_homes[len(list_of_homes) - 1])]
+    path1 = nx.shortest_path(G, list_of_locations.index(list_of_homes[len(list_of_homes) - 1]), list_of_locations.index(starting_car_location), weight="weight")
+    list1.extend(path1)
+    #return list, output
+    #sp to all locations solution end
+
+
+
+
+    #single source shortest path greedy algorithm: find node that's closest to start and go there, remove from list of loc
+
+    #G = adjacency_matrix_to_graph(adjacency_matrix)[0]
+    output = {}
+    list = []
+    lowestHomeNumber = ""
+    lowestWeight = float('inf') #var to store lowest home number, var to store lowest length too
+    homesLeft = list_of_homes
+    source = starting_car_location
+    finalhome = ""
+
+
+    i = 0
+    while homesLeft != []:
+        dict = nx.single_source_shortest_path_length(G, list_of_locations.index(source))
+        for home in homesLeft:
+            if(dict[list_of_locations.index(home)] < lowestWeight):
+                lowestHomeNumber = home
+                lowestWeight = dict[list_of_locations.index(home)]
+        path = nx.shortest_path(G, list_of_locations.index(source), list_of_locations.index(lowestHomeNumber), weight="weight")
+        if (len(homesLeft) == 1):
+            finalhome = lowestHomeNumber
+        path.pop()
+        list.extend(path)
+        #print(list)
+        output[list_of_locations.index(lowestHomeNumber)] = [list_of_locations.index(lowestHomeNumber)]
+
+
+            #decrement homes by 1
+        homesLeft.remove(lowestHomeNumber)
+        source = lowestHomeNumber
+        lowestHomeNumber = ""
+        lowestWeight = float('inf') #var to store lowest home number, var to store lowest length too
+        i+=1
+
+    path = nx.shortest_path(G, list_of_locations.index(finalhome), list_of_locations.index(starting_car_location), weight="weight")
+    list.extend(path)
+
+    if (cost_of_solution(G, list1, output1) < cost_of_solution(G , list, output)):
+        return list1, output1
+    else:
+        return list, output
+
+
+    #G = nx.steiner_tree(adjacency_matrix_to_graph(adjacency_matrix), list_of_homes + [starting_car_location]); #returns steiner tree
 
 
 

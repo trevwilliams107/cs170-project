@@ -4,6 +4,8 @@ sys.path.append('..')
 sys.path.append('../..')
 import argparse
 import utils
+import networkx as nx
+#import dimod
 
 from student_utils import *
 """
@@ -11,6 +13,9 @@ from student_utils import *
   Complete the following function.
 ======================================================================
 """
+
+
+
 
 def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_matrix, params=[]):
     """
@@ -25,7 +30,34 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
         A dictionary mapping drop-off location to a list of homes of TAs that got off at that particular location
         NOTE: both outputs should be in terms of indices not the names of the locations themselves
     """
-    pass
+    #G = nx.steiner_tree(nx.from_numpy_matrix(adjacency_matrix), list_of_homes + [starting_car_location]);
+    #how to find a path to chosen node, then dropoff?
+    #edges = nx.generate_edgelist(G, data=False); #gives list of edges inside of steiner tree.
+    #G = nx.traveling_salesperson(nx.from_numpy_matrix(adjacency_matrix), dimod.ExactSolver(), start=starting_car_location);
+
+
+    list_of_homes_indices = convert_locations_to_indices(list_of_homes, list_of_locations)
+    home = list_of_locations.index(starting_car_location)
+    G = adjacency_matrix_to_graph(adjacency_matrix)[0]
+    list = []
+    path = nx.shortest_path(G, list_of_locations.index(starting_car_location), list_of_locations.index(list_of_homes[0]), weight="weight")
+    list.extend(path)
+    list.pop() #get rid of duplicate
+    output = {}
+    output[list_of_locations.index(list_of_homes[0])] = [list_of_locations.index(list_of_homes[0])]
+
+    for i in range(len(list_of_homes) - 1):
+        path = nx.shortest_path(G, list_of_locations.index(list_of_homes[i]), list_of_locations.index(list_of_homes[i+1]), weight="weight")
+        list.extend(path)
+        list.pop()
+        output[list_of_locations.index(list_of_homes[i])] = [list_of_locations.index(list_of_homes[i])]
+
+    path = nx.shortest_path(G, list_of_locations.index(list_of_homes[len(list_of_homes) - 1]), list_of_locations.index(starting_car_location), weight="weight")
+    list.extend(path)
+    print(list)
+    return list, output
+
+
 
 """
 ======================================================================

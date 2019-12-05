@@ -34,10 +34,11 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
     #how to find a path to chosen node, then dropoff?
     #edges = nx.generate_edgelist(G, data=False); #gives list of edges inside of steiner tree.
     #G = nx.traveling_salesperson(nx.from_numpy_matrix(adjacency_matrix), dimod.ExactSolver(), start=starting_car_location);
+    #list_of_homes_indices = convert_locations_to_indices(list_of_homes, list_of_locations)
+    #home = list_of_locations.index(starting_car_location)
 
-
-    list_of_homes_indices = convert_locations_to_indices(list_of_homes, list_of_locations)
-    home = list_of_locations.index(starting_car_location)
+    '''
+    #shortest paths to each location solution
     G = adjacency_matrix_to_graph(adjacency_matrix)[0]
     list = []
     path = nx.shortest_path(G, list_of_locations.index(starting_car_location), list_of_locations.index(list_of_homes[0]), weight="weight")
@@ -45,17 +46,22 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
     list.pop() #get rid of duplicate
     output = {}
     output[list_of_locations.index(list_of_homes[0])] = [list_of_locations.index(list_of_homes[0])]
-
     for i in range(len(list_of_homes) - 1):
         path = nx.shortest_path(G, list_of_locations.index(list_of_homes[i]), list_of_locations.index(list_of_homes[i+1]), weight="weight")
         list.extend(path)
         list.pop()
         output[list_of_locations.index(list_of_homes[i])] = [list_of_locations.index(list_of_homes[i])]
-
+    output[list_of_locations.index(list_of_homes[len(list_of_homes) - 1])] = [list_of_locations.index(list_of_homes[len(list_of_homes) - 1])]
     path = nx.shortest_path(G, list_of_locations.index(list_of_homes[len(list_of_homes) - 1]), list_of_locations.index(starting_car_location), weight="weight")
     list.extend(path)
     print(list)
     return list, output
+    #sp to all locations solution end
+    '''
+
+    G = nx.steiner_tree(adjacency_matrix_to_graph(adjacency_matrix), list_of_homes + [starting_car_location]); #returns steiner tree
+
+
 
 
 

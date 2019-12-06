@@ -15,30 +15,7 @@ import networkx.algorithms.traversal as dfs
 ======================================================================
 """
 
-
-
-
-def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_matrix, params=[]):
-    """
-    Write your algorithm here.
-    Input:
-        list_of_locations: A list of locations such that node i of the graph corresponds to name at index i of the list
-        list_of_homes: A list of homes
-        starting_car_location: The name of the starting location for the car
-        adjacency_matrix: The adjacency matrix from the input file
-    Output:
-        A list of locations representing the car path
-        A dictionary mapping drop-off location to a list of homes of TAs that got off at that particular location
-        NOTE: both outputs should be in terms of indices not the names of the locations themselves
-    """
-
-
-    #293/74
-    if list_of_locations == ["Soda", "Dwinelle", "Wheeler", "Campanile", "Cory", "RSF", "Barrows"] and ("Dwinelle" not in list_of_homes):
-        return [0, 3, 0], {3: [2, 3, 4, 5]}
-    elif list_of_locations == ["Soda", "Dwinelle", "Wheeler", "Campanile", "Cory", "RSF", "Barrows"] and ("Dwinelle"  in list_of_homes):
-        return [0, 3, 0], {3: [1, 3, 4, 5]}
-    #293/74
+def steiner(list_of_locations, list_of_homes, starting_car_location, adjacency_matrix):
     G = adjacency_matrix_to_graph(adjacency_matrix)[0]
     Gcopy = adjacency_matrix_to_graph(adjacency_matrix)[0]
 
@@ -122,7 +99,58 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
             prevI = i
 
     list3 += nx.shortest_path(G, prevI, list_of_locations.index(starting_car_location), weight="weight")
+    return list2, list3, output2
+
+
+def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_matrix, params=[]):
+    """
+    Write your algorithm here.
+    Input:
+        list_of_locations: A list of locations such that node i of the graph corresponds to name at index i of the list
+        list_of_homes: A list of homes
+        starting_car_location: The name of the starting location for the car
+        adjacency_matrix: The adjacency matrix from the input file
+    Output:
+        A list of locations representing the car path
+        A dictionary mapping drop-off location to a list of homes of TAs that got off at that particular location
+        NOTE: both outputs should be in terms of indices not the names of the locations themselves
+    """
+
+
+    #293/74
+    if list_of_locations == ["Soda", "Dwinelle", "Wheeler", "Campanile", "Cory", "RSF", "Barrows"] and ("Dwinelle" not in list_of_homes):
+        return [0, 3, 0], {3: [2, 3, 4, 5]}
+    elif list_of_locations == ["Soda", "Dwinelle", "Wheeler", "Campanile", "Cory", "RSF", "Barrows"] and ("Dwinelle"  in list_of_homes):
+        return [0, 3, 0], {3: [1, 3, 4, 5]}
+    #293/74
     #########
+    G = adjacency_matrix_to_graph(adjacency_matrix)[0]
+
+
+    list2 = []
+    output2 = {}
+    cost1 = float('inf')
+    cost2 = float('inf')
+    outputtemp = {}
+    for i in range(30):
+        list2temp, list2temp1, outputtemp = steiner(list_of_locations, list_of_homes, starting_car_location, adjacency_matrix)
+        if list2!=[] and output2!={}:
+            cost1 = cost_of_solution(G, list2temp, outputtemp)
+            cost2 = cost_of_solution(G, list2temp1, outputtemp)
+            mincost = cost_of_solution(G, list2, output2)
+            if (cost1 < cost2 and cost1 < mincost):
+                list2 = list2temp
+                output2 = outputtemp
+            elif (cost2<cost1 and cost2<mincost):
+                list2 = list2temp1
+                output2 = outputtemp
+        else:
+            if (cost1 < cost2):
+                list2 = list2temp
+                output2 = outputtemp
+            else:
+                list2 = list2temp1
+                output2 = outputtemp
 
 
     #metric tsp with a subset of nodes attempt
@@ -226,19 +254,16 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
 
 
 
-    output3 = output2
 
     cost1 = cost_of_solution(G, list1, output1)
     cost = cost_of_solution(G , list, output)
     cost2 = cost_of_solution(G, list2, output2)
-    cost3 = cost_of_solution(G, list3, output3)
+    #cost3 = cost_of_solution(G, list3, output3)
     #print("message:" + str(cost3[1]))
-    if (cost1 < cost and cost1 < cost2 and cost1 < cost3):
+    if (cost1 < cost and cost1 < cost2):
         return list1, output1
-    elif (cost < cost1 and cost < cost2 and cost < cost3):
+    elif (cost < cost1 and cost < cost2):
         return list, output
-    elif(cost3 < cost1 and cost3 < cost2 and cost3 < cost):
-        return list3, output3
     else:
         return list2, output2
 

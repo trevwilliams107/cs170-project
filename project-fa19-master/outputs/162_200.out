@@ -1,55 +1,56 @@
-FortCollins Harlingen FortCollins Elkhart Bremerton Allentown Detroit Lacey Irving Lacey Brighton Lacey Detroit Allentown Bremerton Henderson LittleRock Henderson BoiseCity Henderson Bremerton Elkhart Champaign Harrisburg Champaign Elkhart FortCollins Akron Elizabeth Akron FortSmith Arvada Erie Arvada Hickory Inglewood Lubbock Louisville Lubbock Inglewood Hickory Arvada Fargo BonitaSprings Baltimore BonitaSprings Fargo Arvada FortWaltonBeach Amarillo Alexandria Amarillo FortWaltonBeach Arvada Leominster Manchester Atlanta Manchester Leominster Arvada FortSmith Akron FortCollins Bakersfield AnnArbor Bakersfield FortCollins Harlingen Anaheim Kennewick LasVegas Bellevue Lakeland Bellevue LasVegas Austin Lorain CedarRapids Lorain Clarksville Dallas Jefferson Marysville Aberdeen Barnstable Gilbert Jacksonville Gilbert Augusta Gilbert Houston Beaumont Houston DalyCity Houston Fresno Kalamazoo Fresno Houston Gilbert Barnstable Brownsville Fayetteville Brownsville Barnstable Aberdeen CollegeStation Boise CollegeStation ElPaso CollegeStation Laredo Carrollton Berkeley ElMonte Berkeley CapeCoral Berkeley DavidsonCounty Berkeley Carrollton Laredo CollegeStation Aberdeen Marysville Jefferson Dallas Bradenton Dallas Clarksville Lorain Austin Layton Bloomington DesMoines Chandler DesMoines Bloomington Layton FortWayne Evansville Danbury Evansville FortWayne Fairfield Lancaster Anchorage Lancaster Fairfield FortWayne Layton Austin Lorain Clarksville Dallas Jefferson Burbank Indianapolis Garland GrandRapids FortCollins
-53
-Aberdeen Aberdeen
+FortCollins Bakersfield FortCollins Hollywood FortCollins Harlingen Knoxville Harlingen FortCollins Elkhart Champaign Harrisburg Irvine Harrisburg Champaign Elkhart Bremerton Henderson LittleRock Henderson BoiseCity Eugene BoiseCity Henderson Bremerton Allentown AppleValley Allentown Detroit Lacey Irving Cary Irving Lacey Detroit Allentown Bremerton Elkhart FortCollins Akron Elizabeth Akron FortSmith Arvada Erie Arvada Fargo BonitaSprings Baltimore BonitaSprings Fargo Arvada Davenport Albuquerque Davenport Arvada FortWaltonBeach Amarillo Alexandria Amarillo FortWaltonBeach Arvada Leominster Manchester Leominster Arvada Hickory Inglewood Lubbock Louisville Lubbock Inglewood Hickory Arvada FortSmith Akron FortCollins Harlingen Anaheim Kennewick LasVegas Bellevue LasVegas Austin Layton Denver Layton Bloomington DesMoines Chandler DesMoines Bloomington Layton FortWayne Evansville Clearwater Chicago Clearwater Evansville FortWayne Fairfield Lancaster Anchorage Lancaster Fairfield Joliet LasCruces Joliet Fairfield FortWayne Layton Austin Lorain Clarksville Dallas Jefferson Marysville Aberdeen Barnstable Brownsville Fayetteville Appleton Fayetteville Brownsville Barnstable Gilbert Augusta Gilbert Jacksonville Gilbert Houston DalyCity Houston Fresno Kalamazoo Fresno Houston Beaumont Bethlehem Beaumont Houston Gilbert Barnstable Aberdeen CollegeStation ElPaso CollegeStation Laredo Carrollton Frederick Hampton Lafayette Hampton Frederick Carrollton Berkeley CapeCoral Berkeley Carrollton Laredo CollegeStation Aberdeen Marysville Jefferson Burbank Indianapolis Garland FortCollins
+54
+Aberdeen Aberdeen Boise CollegeStation
 LittleRock Abilene LittleRock
 Elizabeth Akron Elizabeth
-Arvada Albuquerque Arvada FortWaltonBeach Leominster
-Alexandria Alexandria Amarillo
-Allentown Allentown AppleValley
-Harlingen Anaheim FortCollins Harlingen Hemet Hollywood Knoxville
+Albuquerque Albuquerque
+Alexandria Alexandria
+AppleValley Allentown AppleValley
+Amarillo Amarillo FortWaltonBeach
+Harlingen Anaheim Harlingen
 Anchorage Anchorage
-AnnArbor AnnArbor Bakersfield
-Fayetteville Appleton Fayetteville
-Atlanta Atlanta Manchester
-Augusta Augusta
-CedarRapids Austin CedarRapids Cleveland Lorain
+Bakersfield AnnArbor Bakersfield
+Appleton Appleton
+Erie Arvada Erie Hickory
+Manchester Atlanta Leominster Manchester
+Augusta Augusta Gilbert
+LasVegas Austin CedarRapids Cleveland Kennewick Lorain
 Baltimore Baltimore
-Barnstable Barnstable Brownsville
-Beaumont Beaumont Bethlehem
-Lakeland Bellevue Independence Lakeland
-Berkeley Berkeley
-Boise Boise
-BoiseCity BoiseCity Eugene
-BonitaSprings BonitaSprings Fargo
-Bradenton Bradenton
-Bremerton Bremerton Grayslake Henderson
-Brighton Brighton Fremont
-Jefferson Burbank Dallas Indianapolis Jefferson
+Barnstable Barnstable
+Bethlehem Beaumont Bethlehem
+Bellevue Bellevue Independence Lakeland
+Carrollton Berkeley Carrollton DavidsonCounty ElMonte
+Eugene BoiseCity Eugene
+BonitaSprings BonitaSprings
+Marysville Bradenton Dallas Jefferson
+Bremerton Bremerton Grayslake
+Lacey Brighton Detroit Fremont Irving Lacey
+Brownsville Brownsville
+Burbank Burbank Indianapolis
 CapeCoral CapeCoral
-Carrollton Carrollton Frederick Hampton Lafayette Lakewood
-Irving Cary Irving
-Champaign Champaign
+Cary Cary
+Champaign Champaign Elkhart
 Chandler Chandler
-Evansville Chicago Evansville
-CollegeStation CollegeStation
-Bloomington ColoradoSprings Denver DesMoines Layton
-DalyCity DalyCity
-Danbury Danbury
-DavidsonCounty DavidsonCounty
-Detroit Detroit
-ElMonte ElMonte
+Chicago Chicago
+Denver ColoradoSprings Denver Layton
+DalyCity DalyCity Houston
+Clearwater Danbury Evansville
+DesMoines DesMoines
 ElPaso ElPaso
-Elkhart Elkhart
-Erie Erie
-Fairfield Fairfield Joliet LasCruces
-Harrisburg Fontana Harrisburg Irvine
-Kalamazoo Fresno Kalamazoo
-GrandRapids Garland GrandRapids
-Jacksonville Gilbert Jacksonville
-Inglewood Hickory Inglewood
-Houston Houston
-Kennewick Kennewick
-Lacey Lacey
-Lancaster Lancaster
-Louisville Louisville
-Lubbock Lubbock
+Lancaster Fairfield Lancaster
+Fargo Fargo
+Fayetteville Fayetteville
+Irvine Fontana Harrisburg Irvine
+FortCollins FortCollins
+Frederick Frederick Hampton
+Fresno Fresno
+Garland Garland GrandRapids
+Knoxville Hemet Knoxville
+Henderson Henderson
+Hollywood Hollywood
+Louisville Inglewood Louisville Lubbock
+Jacksonville Jacksonville
+Joliet Joliet
+Kalamazoo Kalamazoo
+Lafayette Lafayette Lakewood
+LasCruces LasCruces

@@ -50,7 +50,12 @@ def steiner(list_of_locations, list_of_homes, starting_car_location, adjacency_m
             output2[chosenDropoff] = [list_of_locations.index(home)]
 
     #decides the shortest cycle going through start to all dropoff locs
-
+    dropListcopy = dropList
+    for drop in dropList:
+        if (not drop in output2):
+            dropListcopy.remove(drop)
+    dropList = dropListcopy
+    
     lowestDropoff = dropList[0]
     lowestDropoffWeight = float('inf') #var to store lowest home number, var to store lowest length too
     dropoffsLeft = dropList
@@ -115,7 +120,7 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
         A dictionary mapping drop-off location to a list of homes of TAs that got off at that particular location
         NOTE: both outputs should be in terms of indices not the names of the locations themselves
     """
-
+    
 
     #293/74
     if list_of_locations == ["Soda", "Dwinelle", "Wheeler", "Campanile", "Cory", "RSF", "Barrows"] and ("Dwinelle" not in list_of_homes):
@@ -132,7 +137,7 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
     cost1 = float('inf')
     cost2 = float('inf')
     outputtemp = {}
-    for i in range(10):
+    for i in range(1):
         list2temp, list2temp1, outputtemp = steiner(list_of_locations, list_of_homes, starting_car_location, adjacency_matrix)
         if list2!=[] and output2!={}:
             cost1 = cost_of_solution(G, list2temp, outputtemp)
@@ -151,6 +156,7 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
             else:
                 list2 = list2temp1
                 output2 = outputtemp
+    
 
 
     #metric tsp with a subset of nodes attempt

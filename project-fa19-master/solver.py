@@ -137,7 +137,7 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
     cost1 = float('inf')
     cost2 = float('inf')
     outputtemp = {}
-    for i in range(1):
+    for i in range(7):
         list2temp, list2temp1, outputtemp = steiner(list_of_locations, list_of_homes, starting_car_location, adjacency_matrix)
         if list2!=[] and output2!={}:
             cost1 = cost_of_solution(G, list2temp, outputtemp)
